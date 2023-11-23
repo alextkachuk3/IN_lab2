@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from "@angular/forms";
 import { NgFor } from "@angular/common";
 import { RouterOutlet, RouterLink } from "@angular/router";
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 class Item {
   purchase: string;
@@ -19,7 +20,7 @@ class Item {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [FormsModule, NgFor, RouterOutlet, RouterLink],
+  imports: [FormsModule, NgFor, RouterOutlet, RouterLink, NgbModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
