@@ -6,11 +6,12 @@ import { SignInComponent } from "./authorization/sign-in/sign-in.component"
 import { SignUpComponent } from "./authorization/sign-up/sign-up.component"
 import { PrivacyPolicyComponent } from "./privacy-policy.component";
 import { NotFoundComponent } from "./not-found.component";
+import { AuthGuard } from "./authorization/auth.guard";
 
 const appRoutes: Routes = [
-  { path: "", component: MainComponent },
-  { path: "signin", component: SignInComponent },
-  { path: "signup", component: SignUpComponent },
+  { path: "", component: MainComponent, canActivate: [AuthGuard] },
+  { path: "signin", component: SignInComponent, canActivate: [AuthGuard] },
+  { path: "signup", component: SignUpComponent, canActivate: [AuthGuard] },
   { path: "privacy", component: PrivacyPolicyComponent },
   { path: "**", component: NotFoundComponent }
 ];

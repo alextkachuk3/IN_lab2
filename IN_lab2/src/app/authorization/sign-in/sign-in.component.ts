@@ -1,11 +1,10 @@
 import { Component } from "@angular/core";
-import { RouterLink } from "@angular/router";
+import { Router, RouterLink } from "@angular/router";
 import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 
 import { AuthorizationService } from "../authorization.service";
 import { User } from "../user";
-import { Jwt } from "../jwt";
 
 @Component({
   selector: "sign-in",
@@ -16,12 +15,12 @@ import { Jwt } from "../jwt";
 })
 export class SignInComponent {
   user: User = new User("", "");
-  constructor(private authService: AuthorizationService) { }
+  constructor(private authService: AuthorizationService, private router: Router) { }
 
   submit(user: User) {
     this.authService.postData(user)
       .subscribe({
-        next: (data: any) => { this.authService.saveToken(data.token); console.log(data.token) },
+        next: (data: any) => { this.authService.saveToken(data.token); console.log(data.token); this.router.navigate(['']) },
         error: error => console.log(error)
       });
   }
