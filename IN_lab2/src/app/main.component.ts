@@ -12,7 +12,10 @@ import { Music } from "./music";
   styleUrls: ['./main.component.css'],
 })
 export class MainComponent implements OnInit {
+ 
   public musics: Music[] = [];
+  public musicPlayer = document.getElementById('musicPlayer') as HTMLAudioElement;
+  audioSource: string = '';
   constructor(private http: HttpClient, private authService: AuthorizationService) { }
 
   ngOnInit() {
@@ -29,5 +32,23 @@ export class MainComponent implements OnInit {
         console.error('Error:', error);
       }
     );
+  }
+
+  playMusic(musicId: string) {
+    this.http.get(`https://localhost:7232/Music/${musicId}`, { responseType: 'arraybuffer' })
+      .subscribe(
+        (data: any) => {
+          const blob = new Blob([data], { type: 'audio/mpeg' });
+          const url = URL.createObjectURL(blob);
+
+          this.audioSource = url;
+          //this.musicPlayer.src = url;
+          //this.musicPlayer.load();
+          //this.musicPlayer.play();
+        },
+        (error) => {
+          console.error('Error fetching audio content:', error);
+        }
+      );
   }
 }

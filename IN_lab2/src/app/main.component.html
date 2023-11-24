@@ -1,20 +1,26 @@
 <div class="container p-3">
-  <table class="table">
-    <thead>
-      <tr class="table-success">
-        <th class="md-10">Name</th>
-        <th class="md-2"></th>
-      </tr>
-    </thead>
-    <tbody *ngFor="let music of musics; let i = index">
-      <tr class="table-primary">
-        <td class="md-10"> {{music.name}} </td>
-        <td class="md-2">
-          <a>
-            <img src="../assets/images/play.png" />
-          </a>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <h1>Music Player</h1>
+  <audio [src]="audioSource" controls id="musicPlayer" preload="metadata" class="col-sm-12 col-sm-offset-4 embed-responsive embed-responsive-4by3">
+  </audio>
+
+  <div class="p-3">
+    <table class="table">
+      <thead>
+        <tr class="table-success">
+          <th class="md-10">Name</th>
+          <th class="md-2"></th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let music of musics; let i = index">
+        <tr class="table-primary">
+          <td class="md-10"> {{music.name}} </td>
+          <td class="md-2">
+            <a (click)="playMusic(music.id)">
+              <img src="../assets/images/play.png" />
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
