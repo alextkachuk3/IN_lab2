@@ -16,12 +16,12 @@ import { Jwt } from "../jwt";
 })
 export class SignInComponent {
   user: User = new User("", "");
-  constructor(private httpService: AuthorizationService) { }
+  constructor(private authService: AuthorizationService) { }
 
   submit(user: User) {
-    this.httpService.postData(user)
+    this.authService.postData(user)
       .subscribe({
-        next: (data: any) => { console.log(data.token) },
+        next: (data: any) => { this.authService.saveToken(data.token); console.log(data.token) },
         error: error => console.log(error)
       });
   }
