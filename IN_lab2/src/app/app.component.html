@@ -29,23 +29,27 @@
   </tbody>
 </table>
 <div>-->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a routerLink="" class="navbar-brand">Music</a>
 
-    <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-    </div>
+<header class="p-3 text-bg-dark">
+
+  <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+    <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+      <li><a routerLink="" class="navbar-brand px-2 ">Music service</a></li>
+    </ul>
+
+    <!--<form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+      <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
+    </form>-->
 
     <div class="text-end">
-      <b class="text-light ">UserName</b>
-      <button (click)="logout()" class="btn btn-outline-primary">Logout</button>
+      <a *ngIf="authService.getToken()" class="me-2">Upload</a>
+      <b *ngIf="authService.getToken()" class="me-3">Username</b>
+      <button (click)="logout()" type="button" class="btn btn-outline-light me-2">Logout</button>
     </div>
   </div>
-</nav>
-<!--<nav>
-  <a routerLink="">Music</a>
-  <a routerLink="/signin">Sign In</a>
-</nav>-->
+
+</header>
+
 <router-outlet></router-outlet>
 
 <footer class="footer text-muted fixed-bottom">
