@@ -29,9 +29,28 @@
   </tbody>
 </table>
 <div>-->
-<nav>
-  <a routerLink="">Home</a>
-  <a routerLink="/privacy">Privacy policy</a>
-  <a routerLink="/signin">Sign In</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a routerLink="" class="navbar-brand">Music</a>
+
+    <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+    </div>
+
+    <div class="text-end">
+      <b class="text-light ">UserName</b>
+      <a onclick="IncreaseReloadCounter()" class="btn btn-outline-primary">Logout</a>
+    </div>
+  </div>
 </nav>
+<!--<nav>
+  <a routerLink="">Music</a>
+  <a routerLink="/signin">Sign In</a>
+</nav>-->
 <router-outlet></router-outlet>
+
+<footer class="footer text-muted fixed-bottom">
+  <div class="container">
+    <span>Music Service - <a routerLink="/privacy" class="link-dark">Privacy policy</a></span>
+  </div>
+</footer>
+
