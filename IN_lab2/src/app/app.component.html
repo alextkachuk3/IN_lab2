@@ -42,7 +42,7 @@
     </form>-->
 
     <div class="text-end">
-      <a *ngIf="authService.getToken()" (click)="logout()"><img src="../assets/images/upload.png" (click)="logout()" class="me-2"></a>
+      <a *ngIf="authService.getToken()" routerLink="upload"><img src="../assets/images/upload.png" class="me-2"></a>
       <b *ngIf="authService.getToken()" class="me-3">Username</b>
 
       <button (click)="logout()" type="button" class="btn btn-outline-light me-2">Logout</button>
