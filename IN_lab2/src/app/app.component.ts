@@ -4,6 +4,8 @@ import { NgFor } from "@angular/common";
 import { RouterOutlet, RouterLink } from "@angular/router";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+import { Jwt } from './authorization/jwt'
+
 class Item {
   purchase: string;
   done: boolean;
@@ -26,20 +28,5 @@ class Item {
 })
 export class AppComponent {
   title = 'IN_lab2';
-  text: string = "";
-  price: number = 0;
-
-  items: Item[] =
-    [
-      { purchase: "Хліб", done: false, price: 15.9 },
-      { purchase: "Масло", done: false, price: 60 },
-      { purchase: "Картопля", done: true, price: 22.6 },
-      { purchase: "Сир", done: false, price: 310 }
-    ];
-  addItem(text: string, price: number): void {
-
-    if (text == null || text.trim() == "" || price == null)
-      return;
-    this.items.push(new Item(text, price));
-  }
+  
 }

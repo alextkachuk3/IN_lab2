@@ -1,22 +1,22 @@
 <section class="w-100 p-4 d-flex justify-content-center pb-4">
-  <form style="width: 22rem;">
+  <div style="width: 22rem;">
     <div class="form-outline mb-4">
-      <input type="text" id="usernameInput" class="form-control">
+      <input [(ngModel)]="user.username" type="text" id="usernameInput" class="form-control">
       <label class="form-label" for="usernameInput">Username</label>
     </div>
 
     <div class="form-outline mb-4">
-      <input type="password" id="passwordInput" class="form-control">
+      <input [(ngModel)]="user.password" type="password" id="passwordInput" class="form-control">
       <label class="form-label" for="passwordInput">Password</label>
     </div>
 
-    <button type="button" class="w-100 btn btn-primary btn-block mb-4">Sign in</button>
+    <button (click)="submit(user)" type="button" class="w-100 btn btn-primary btn-block mb-4">Sign in</button>
 
     <hr class="hr my-3"/>
 
     <a routerLink="../signup" class="w-100 btn btn-success btn-block mb-4">Create account</a>
 
-  </form>
+  </div>
 
  
 </section>
