@@ -1,11 +1,12 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { User } from "./user";
+import { Router } from "@angular/router";
 
 @Injectable()
 export class AuthorizationService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   postData(user: User) {
     const body = { username: user.username, password: user.password };
@@ -22,5 +23,6 @@ export class AuthorizationService {
 
   logout(): void {
     localStorage.removeItem('token');
+    this.router.navigate(['signin']);
   }
 }

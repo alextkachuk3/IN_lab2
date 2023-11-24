@@ -5,10 +5,7 @@ import { RouterOutlet, RouterLink } from "@angular/router";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from "@angular/common/http";
 
-
 import { AuthorizationService } from './authorization/authorization.service'
-
-import { Jwt } from './authorization/jwt'
 
 
 @Component({
