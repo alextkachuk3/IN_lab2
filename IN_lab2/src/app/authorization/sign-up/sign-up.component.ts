@@ -2,9 +2,9 @@ import { Component } from "@angular/core";
 import { RouterLink } from "@angular/router";
 
 @Component({
-  selector: "sign-in",
+  selector: "sign-up",
   standalone: true,
   imports: [RouterLink],
-  templateUrl: './sign-in.component.html',
+  templateUrl: './sign-up.component.html',
 })
-export class SignInComponent { }
+export class SignUpComponent { }
