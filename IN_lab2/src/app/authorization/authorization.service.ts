@@ -8,9 +8,14 @@ export class AuthorizationService {
 
   constructor(private http: HttpClient, private router: Router) { }
 
-  postData(user: User) {
+  postSignIn(user: User) {
     const body = { username: user.username, password: user.password };
     return this.http.post("https://localhost:7232/User/Login", body);
+  }
+
+  postSignUp(user: User) {
+    const body = { username: user.username, password: user.password };
+    return this.http.post("https://localhost:7232/User/Signup", body);
   }
 
   saveToken(token: string): void {

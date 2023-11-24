@@ -18,7 +18,7 @@ export class SignInComponent {
   constructor(private authService: AuthorizationService, private router: Router) { }
 
   submit(user: User) {
-    this.authService.postData(user)
+    this.authService.postSignIn(user)
       .subscribe({
         next: (data: any) => { this.authService.saveToken(data.token); console.log(data.token); this.router.navigate(['']) },
         error: error => console.log(error)
