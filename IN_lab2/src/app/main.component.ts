@@ -40,11 +40,7 @@ export class MainComponent implements OnInit {
         (data: any) => {
           const blob = new Blob([data], { type: 'audio/mpeg' });
           const url = URL.createObjectURL(blob);
-
           this.audioSource = url;
-          //this.musicPlayer.src = url;
-          //this.musicPlayer.load();
-          //this.musicPlayer.play();
         },
         (error) => {
           console.error('Error fetching audio content:', error);
