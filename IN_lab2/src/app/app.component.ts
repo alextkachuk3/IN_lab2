@@ -17,7 +17,16 @@ import { AuthorizationService } from './authorization/authorization.service';
   providers: [AuthorizationService]
 })
 export class AppComponent {
-  constructor(public authService: AuthorizationService) { }
+  public username: string = '';
+  constructor(public authService: AuthorizationService) {
+    if (this.authService.getToken()) {
+      this.authService.getUsername()
+        .subscribe({
+          next: (data: any) => { this.username = data.username; console.log(data) },
+          error: error => console.log(error)
+        });
+    }
+  }
 
   title = 'IN_lab2';
 

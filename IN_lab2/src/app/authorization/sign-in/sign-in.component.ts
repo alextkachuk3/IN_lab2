@@ -24,5 +24,4 @@ export class SignInComponent {
         error: error => console.log(error)
       });
   }
-
 }

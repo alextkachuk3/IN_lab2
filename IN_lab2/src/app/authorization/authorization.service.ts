@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { User } from "./user";
 import { Router } from "@angular/router";
 
@@ -16,6 +16,14 @@ export class AuthorizationService {
   postSignUp(user: User) {
     const body = { username: user.username, password: user.password };
     return this.http.post("https://localhost:7232/User/Signup", body);
+  }
+
+  getUsername() {
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${this.getToken()}`,
+    });
+
+    return this.http.get("https://localhost:7232/User/Username", { headers });
   }
 
   saveToken(token: string): void {

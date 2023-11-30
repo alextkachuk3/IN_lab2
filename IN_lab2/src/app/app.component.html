@@ -43,9 +43,9 @@
 
     <div class="text-end">
       <a *ngIf="authService.getToken()" routerLink="upload"><img src="../assets/images/upload.png" class="me-2"></a>
-      <b *ngIf="authService.getToken()" class="me-3">Username</b>
+      <b *ngIf="authService.getToken()" class="me-3">{{ username }}</b>
 
-      <button (click)="logout()" type="button" class="btn btn-outline-light me-2">Logout</button>
+      <button *ngIf="authService.getToken()" (click)="logout()" type="button" class="btn btn-outline-light me-2">Logout</button>
     </div>
   </div>
 
