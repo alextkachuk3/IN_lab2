@@ -10,6 +10,10 @@
       <label class="form-label" for="passwordInput">Password</label>
     </div>
 
+    <p *ngIf="error.length>0">{{ error }}</p>
+
+    <hr *ngIf="error.length>0">
+
     <button (click)="submit(user)" type="button" class="w-100 btn btn-primary btn-block mb-4">Sign up</button>
 
     <hr class="hr my-3" />

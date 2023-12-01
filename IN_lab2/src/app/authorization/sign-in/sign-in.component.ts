@@ -24,8 +24,6 @@ export class SignInComponent {
       .subscribe({
         next: (data: any) => {
           this.authService.saveToken(data.token);
-
-          console.log(data.token);
           console.log(data.error);
           this.router.navigate([''])
         },
@@ -35,15 +33,13 @@ export class SignInComponent {
           if (error_message === "wrong_username_or_password") {
             this.error = "Wrong username or password";
           }
-          else if (error_message === "password_contains_special_chars")
-          {
+          else if (error_message === "password_contains_special_chars") {
             this.error = "Password contains special chars";
           }
           else if (error_message === "username_contains_special_chars") {
             this.error = "Username contains special chars";
           }
-          else if (error_message === "username_lenght_is_smaller_than_5")
-          {
+          else if (error_message === "username_lenght_is_smaller_than_5") {
             this.error = "Username lenght is smaller than 5";
           }
           else if (error_message === "username_length_is_bigger_than_30") {

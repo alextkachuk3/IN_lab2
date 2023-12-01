@@ -1,8 +1,4 @@
 <div class="container p-3">
-  <h1>Music Player</h1>
-  <audio [src]="audioSource" controls autoplay id="musicPlayer" preload="metadata" class="col-sm-12 col-sm-offset-4 embed-responsive embed-responsive-4by3">
-  </audio>
-
   <div class="p-3">
     <table class="table">
       <thead>
@@ -24,3 +20,11 @@
     </table>
   </div>
 </div>
+
+<footer class="footer text-muted fixed-bottom">
+  <div class="container">
+    <audio [src]="audioSource" controls autoplay id="musicPlayer" preload="metadata" class="col-sm-12 col-sm-offset-4 embed-responsive embed-responsive-4by3">
+    </audio>
+    <!--<span>Music Service - <a routerLink="/privacy" class="link-dark">Privacy policy</a></span>-->
+  </div>
+</footer>

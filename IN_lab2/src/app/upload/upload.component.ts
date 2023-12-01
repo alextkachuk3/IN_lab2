@@ -29,6 +29,7 @@ export class UploadComponent {
         .subscribe(
           response => {
             console.log('File uploaded successfully', response);
+            this.router.navigate(['']);
           },
           error => {
             console.error('Error uploading file', error);
