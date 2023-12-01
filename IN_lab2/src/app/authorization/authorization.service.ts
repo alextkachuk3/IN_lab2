@@ -5,7 +5,6 @@ import { Router } from "@angular/router";
 
 @Injectable()
 export class AuthorizationService {
-
   constructor(private http: HttpClient, private router: Router) { }
 
   postSignIn(user: User) {

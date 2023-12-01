@@ -19,12 +19,15 @@
       </tbody>
     </table>
   </div>
+  <span>Music Service - <a routerLink="/privacy" class="link-dark">Privacy policy</a></span>
+  <div class="p-3">
+    <hr />
+  </div>
 </div>
 
-<footer class="footer text-muted fixed-bottom">
+<footer class="footer text-muted fixed-bottom bg-dark p-1">
   <div class="container">
-    <audio [src]="audioSource" controls autoplay id="musicPlayer" preload="metadata" class="col-sm-12 col-sm-offset-4 embed-responsive embed-responsive-4by3">
+    <audio [src]="audioSource" controls autoplay id="musicPlayer" preload="metadata" class="col-sm-12 col-sm-offset-4">
     </audio>
-    <!--<span>Music Service - <a routerLink="/privacy" class="link-dark">Privacy policy</a></span>-->
   </div>
 </footer>

@@ -1,12 +1,13 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
 import { AuthorizationService } from "./authorization/authorization.service";
+import { RouterLink } from "@angular/router";
 import { NgFor } from "@angular/common";
 import { Music } from "./music";
 
 @Component({
   selector: "main",
-  imports: [NgFor],
+  imports: [NgFor, RouterLink],
   standalone: true,
   templateUrl: "./main.component.html",
   styleUrls: ['./main.component.css'],
