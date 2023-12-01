@@ -1,4 +1,5 @@
 <form (submit)="onSubmit()" enctype="multipart/form-data">
-  <input type="file" [multiple]="true" (change)="onFileSelected($event)" />
+  <input type="file" (change)="onFileSelected($event)" />
+  <input type="text" [(ngModel)]="musicName" name="musicName" placeholder="Enter music name">
   <button type="submit">Upload</button>
 </form>
