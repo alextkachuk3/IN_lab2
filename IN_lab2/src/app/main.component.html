@@ -1,5 +1,5 @@
 <div class="container p-3">
-  <div class="p-3">
+  <div *ngIf="musics.length>0; else elseBlock" class="p-3">
     <table class="table">
       <thead>
         <tr class="table-success">
@@ -19,10 +19,8 @@
       </tbody>
     </table>
   </div>
-  <span>Music Service - <a routerLink="/privacy" class="link-dark">Privacy policy</a></span>
-  <div class="p-3">
-    <hr />
-  </div>
+
+  <ng-template #elseBlock>You haven't uploaded any music!</ng-template>
 </div>
 
 <footer class="footer text-muted fixed-bottom bg-dark p-1">
